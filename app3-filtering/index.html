@@ -1,7 +1,17 @@
 <html>
-	<body>
+	<body ng-app="app">
 		Something
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+		<div ng-controller="appCtrl">
+			<input ng-model='filter'/>
+			<div ng-repeat="person in data | filter: filter">
+				<h1>{{ person.name }}</h1>
+				<h4>{{ person.email }}</h4>
+				<h4>{{ person.phone }}</h4>
+				<h5>{{ person.dateEmployed }}</h5>
+			</div>
+
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>
